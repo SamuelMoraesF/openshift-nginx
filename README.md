@@ -1,4 +1,5 @@
 # Openshift Nginx Cartridge
+[![OpenShift deploy](https://img.shields.io/badge/openshift-deploy-red.svg?style=flat-square)](https://openshift.redhat.com/app/console/application_type/custom?cartridges%5B%5D=https%3A%2F%2Fraw.githubusercontent.com%2FSamuelMoraesF%2Fopenshift-nginx%2Fmaster%2Fopenshift-cartridge-nginx)
 Welcome to a life where [nginx](http://nginx.org/) is possible on [openshift](https://www.openshift.com/).
  
 This cartridge allow you to create a scalable nginx application.
