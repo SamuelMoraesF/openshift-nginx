@@ -57,4 +57,4 @@ Endpoints:
     Backend: ''
     Options:
       health: true
-Source-Url: https://raw.githubusercontent.com/SamuelMoraesF/openshift-nginx/archive/master.zip
+Source-Url: https://github.com/SamuelMoraesF/openshift-nginx/archive/master.zip
