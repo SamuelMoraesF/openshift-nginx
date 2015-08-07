@@ -1,27 +1,60 @@
-Name: php
-Cartridge-Short-Name: PHP
-Display-Name: Php
-License: MIT
-Version: 5.6.6
+Name: nginx
+Cartridge-Short-Name: NGINX
+Display-Name: Nginx
+Version: 1.6.2
 Versions:
-- 5.5.22
-- 5.6.6
-Website: https://github.com/SamuelMoraesF/openshift-nginx
-Cartridge-Version: 0.0.2
+- 1.6.2
+- 1.7.10
+Website: https://raw.githubusercontent.com/SamuelMoraesF/openshift-nginx
+Cartridge-Version: 0.0.1
 Cartridge-Vendor: samuelmoraesf
 Categories:
-- embedded
-- plugin
+- web_framework
+- service
+- nginx
 Provides:
-- php-5.6
-- php-5.5
-- php-fpm
-- php
+- nginx-1.7
+- nginx-1.6
+- nginx
 Scaling:
   Min: 1
   Max: -1
+Cart-Data:
+- Key: OPENSHIFT_NGINX_PORT
+  Type: environment
+  Description: Internal port to which the web-framework binds to.
+- Key: OPENSHIFT_NGINX_IP
+  Type: environment
+  Description: Internal IP to which the web-framework binds to.
+Publishes:
+  get-doc-root:
+    Type: FILESYSTEM:doc-root
+  publish-http-url:
+    Type: NET_TCP:httpd-proxy-info
+  publish-gear-endpoint:
+    Type: NET_TCP:gear-endpoint-info
+Subscribes:
+  set-env:
+    Type: ENV:*
+    Required: false
+  set-doc-url:
+    Type: STRING:urlpath
+    Required: false
 Group-Overrides:
 - components:
-  - php-5.6
-  - web_framework
-Source-Url: https://github.com/SamuelMoraesF/openshift-nginx/archive/master.zip
+  - web_proxy
+Endpoints:
+- Private-IP-Name: IP
+  Private-Port-Name: PORT
+  Private-Port: 8080
+  Public-Port-Name: PROXY_PORT
+  Mappings:
+  - Frontend: ''
+    Backend: ''
+    Options:
+      websocket: true
+  - Frontend: /health
+    Backend: ''
+    Options:
+      health: true
+Source-Url: https://raw.githubusercontent.com/SamuelMoraesF/openshift-nginx/archive/master.zip
