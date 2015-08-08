@@ -5,6 +5,7 @@ Version: 1.6.2
 Versions:
 - 1.6.2
 - 1.7.10
+- 1.8.0
 Website: https://raw.githubusercontent.com/SamuelMoraesF/openshift-nginx
 Cartridge-Version: 0.0.1
 Cartridge-Vendor: samuelmoraesf
@@ -13,6 +14,7 @@ Categories:
 - service
 - nginx
 Provides:
+- nginx-1.8
 - nginx-1.7
 - nginx-1.6
 - nginx

@@ -19,6 +19,7 @@ rhc create-app nginx --env OPENSHIFT_NGINX_VERSION=1.7.10 https://raw.githubuser
 Currently this cartridge has the following versions:
 - 1.6.2
 - 1.7.10
+- 1.8.0
 
 If you need another version you can compile it yourself and submit a PR to get it integrated.
 
@@ -28,7 +29,7 @@ To compile a new version you will first need a openshift application.
 rhc create-app nginx https://raw.githubusercontent.com/SamuelMoraesF/openshift-nginx/master/openshift-cartridge-nginx
 ```
 
-Now clone the repository, create a `nginx` folder and copy the `usr/compile` directory from [this](https://github.com/boekkooi/openshift-cartridge-nginx) repository.
+Now clone the repository, create a `nginx` folder and copy the `usr/compile` directory from [this](https://github.com/SamuelMoraesF/openshift-nginx) repository.
 Set the versions you need to compile in the `nginx/compile/versions` file. Commit and push the application repository.
   
 SSH into you app and go to the compile folder (`cd ${OPENSHIFT_REPO_DIR}/nginx/compile`) and start compiling by running the following command:
